@@ -49,6 +49,13 @@ a, button {
     scrollbar-width: none;
 }
 
+/* Esconde a barra de rolagem do PC e Celular para manter a estética limpa */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* Classes para o mouse do computador virar uma "mãozinha" agarrando */
+.cursor-grab { cursor: grab; }
+.cursor-grabbing { cursor: grabbing !important; }
+
 /* Respeito às preferências de redução de movimento */
 @media (prefers-reduced-motion: reduce) {
     .reveal {
@@ -65,3 +72,17 @@ a, button {
 .tracking-widest-extra {
     letter-spacing: 0.2em;
 }
+
+@keyframes spin-marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+    /* 25s é a velocidade. Diminua para girar mais rápido, aumente para mais devagar */
+    animation: spin-marquee 25s linear infinite;
+}
+/* Pausa a faixa ao passar o mouse por cima (desktop) ou tocar (mobile) */
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+   

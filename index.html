@@ -132,11 +132,11 @@
                 <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md sm:max-w-none justify-center reveal delay-300">
                     <a href="https://api.whatsapp.com/send/?phone=554599632098&text&type=phone_number&app_absent=0" class="btn-whatsapp flex items-center justify-center gap-2 bg-dr-orange text-white px-6 py-3 text-sm md:px-8 md:py-4 md:text-base rounded-full font-medium tracking-wide hover:bg-dr-orangeHover transition-all shadow-[0_0_20px_rgba(230,92,0,0.3)] w-full sm:w-auto">
                         <i class="ph ph-whatsapp-logo text-xl"></i>
-                        PEDIR NO WHATSAPP
+                        FALE CONOSCO
                     </a>
                     <a href="https://donritterdelivery.saipos.com/home" class="btn-pedir flex items-center justify-center gap-2 bg-transparent border border-dr-text/30 text-dr-text px-6 py-3 text-sm md:px-8 md:py-4 md:text-base rounded-full font-medium tracking-wide hover:bg-dr-text/10 transition-colors w-full sm:w-auto backdrop-blur-sm">
                         <i class="ph ph-tote text-xl"></i>
-                        PEDIR ONLINE
+                        FAÇA SEU PEDIDO
                     </a>
                 </div>
             </div>
@@ -150,10 +150,12 @@
 
         <!-- Seção 2: CARDÁPIO INTERATIVO (Passando pela Brasa) -->
         <section id="destaques" class="py-24 relative z-20 bg-dr-bg border-t border-dr-border">
-            <div class="text-center mb-12 px-6 md:px-12 reveal">
-                <span class="text-dr-orange text-xs font-semibold tracking-widest-extra uppercase mb-2 block">Cardápio</span>
-                <h2 class="font-heading text-5xl md:text-7xl">PASSANDO PELA TELA</h2>
-                <p class="text-sm text-dr-text/60 mt-4 max-w-md mx-auto">Toque para pausar a esteira.</p>
+            <div class="text-center px-6 mb-12">
+                <span class="text-dr-orange text-sm font-semibold tracking-widest uppercase mb-2 block reveal">Cardápio</span>
+                <h2 class="font-heading text-5xl md:text-6xl text-dr-text reveal delay-100">PASSANDO PELA BRASA</h2>
+                <p class="text-dr-text/70 mt-4 max-w-xl mx-auto text-sm md:text-base reveal delay-200">
+                    Toque e arraste para os lados para explorar o cardápio.
+                </p>
             </div>
 
             <!-- Carrossel Mobile / Grid Desktop -->
@@ -216,6 +218,42 @@
             </div>
         </section>
 
+        <!-- Faixa Promocional Animada (Marquee) -->
+         <section id="promocao" class="w-full bg-dr-orange overflow-hidden flex relative py-3 z-30 border-y border-dr-orangeHover">
+            <!-- A animação translada -50%, então o conteúdo é duplicado para um loop perfeito -->
+            <div class="flex animate-marquee whitespace-nowrap min-w-max items-center">
+                
+                <!-- METADE 1 -->
+                <div class="flex items-center">
+                    <span class="font-heading text-2xl md:text-3xl tracking-widest text-[#16110f] px-6 mt-1">RODÍZIO E DELIVERY DE TERÇA A DOMINGO</span>
+                    <i class="ph ph-pizza text-[#16110f] text-2xl md:text-3xl"></i>
+                    
+                    <span class="font-heading text-2xl md:text-3xl tracking-widest text-[#16110f] px-6 mt-1">RODÍZIO E DELIVERY DE TERÇA A DOMINGO</span>
+                    <i class="ph ph-pizza text-[#16110f] text-2xl md:text-3xl"></i>
+                    
+                    <span class="font-heading text-2xl md:text-3xl tracking-widest text-[#16110f] px-6 mt-1">RODÍZIO E DELIVERY DE TERÇA A DOMINGO</span>
+                    <i class="ph ph-pizza text-[#16110f] text-2xl md:text-3xl"></i>
+                    
+                    <span class="font-heading text-2xl md:text-3xl tracking-widest text-[#16110f] px-6 mt-1">RODÍZIO E DELIVERY DE TERÇA A DOMINGO</span>
+                    <i class="ph ph-pizza text-[#16110f] text-2xl md:text-3xl"></i>
+                </div>
+
+                <!-- METADE 2 (Cópia exata da Metade 1 para o reset invisível) -->
+                <div class="flex items-center">
+                    <span class="font-heading text-2xl md:text-3xl tracking-widest text-[#16110f] px-6 mt-1">RODÍZIO E DELIVERY DE TERÇA A DOMINGO</span>
+                    <i class="ph ph-pizza text-[#16110f] text-2xl md:text-3xl"></i>
+                    
+                    <span class="font-heading text-2xl md:text-3xl tracking-widest text-[#16110f] px-6 mt-1">RODÍZIO E DELIVERY DE TERÇA A DOMINGO</span>
+                    <i class="ph ph-pizza text-[#16110f] text-2xl md:text-3xl"></i>
+                    
+                    <span class="font-heading text-2xl md:text-3xl tracking-widest text-[#16110f] px-6 mt-1">RODÍZIO E DELIVERY DE TERÇA A DOMINGO</span>
+                    <i class="ph ph-pizza text-[#16110f] text-2xl md:text-3xl"></i>
+                    
+                    <span class="font-heading text-2xl md:text-3xl tracking-widest text-[#16110f] px-6 mt-1">RODÍZIO E DELIVERY DE TERÇA A DOMINGO</span>
+                    <i class="ph ph-pizza text-[#16110f] text-2xl md:text-3xl"></i>
+                </div>
+            </div>
+        </section>
         <!-- Seção 3: AS MAIS PEDIDAS (Formato Lista) -->
         <section class="py-24 bg-[#1a1412] px-6 md:px-12 relative z-10 border-t border-dr-border/30">
             <div class="max-w-4xl mx-auto">
@@ -333,11 +371,11 @@
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="https://api.whatsapp.com/send/?phone=554599632098&text&type=phone_number&app_absent=0" class="btn-whatsapp flex items-center justify-center gap-2 bg-dr-orange text-white px-6 py-4 text-sm md:px-10 md:py-5 md:text-lg rounded-full font-medium tracking-wide hover:bg-dr-orangeHover transition-all shadow-lg w-full sm:w-auto">
                         <i class="ph ph-whatsapp-logo text-xl md:text-2xl"></i>
-                        PEDIR NO WHATSAPP
+                        FALE CONOSCO    
                     </a>
                     <a href="https://donritterdelivery.saipos.com/home" class="btn-pedir flex items-center justify-center gap-2 bg-[#6b1c11] text-dr-text px-6 py-4 text-sm md:px-10 md:py-5 md:text-lg rounded-full font-medium tracking-wide hover:bg-[#54160d] transition-colors w-full sm:w-auto">
                         <i class="ph ph-tote text-xl md:text-2xl"></i>
-                        PEDIR ONLINE
+                        FAÇA SEU PEDIDO
                     </a>
                 </div>
             </div>

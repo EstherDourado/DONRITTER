@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         let isScrolling = true;
-        const scrollSpeed = 1; // Velocidade da esteira (pixels por frame)
+        const scrollSpeed = 0.5; // Velocidade da esteira (pixels por frame)
         
         function autoScrollCarousel() {
             if (isScrolling) {
