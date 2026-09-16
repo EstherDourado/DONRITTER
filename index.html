@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Ritter Pizzaria</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A experiência Don Ritter. Massa de fermentação lenta, molho da casa e brasa de verdade. Peça sua pizza artesanal em Cascavel.">
+    <meta name="keywords" content="pizzaria, pizza artesanal, forno a lenha, Cascavel, delivery de pizza, Don Ritter">
+    <meta name="theme-color" content="#1a1311">
+    
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:title" content="Don Ritter Pizzaria">
+    <meta property="og:description" content="Massa de fermentação lenta, molho da casa e brasa de verdade. A pizza sai do forno e vai direto para a sua mesa.">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:url" content="https://donritterpizzaria.com.br">
+    
+    <!-- Fontes (Bebas Neue para Títulos parecidos com a referência, Inter para corpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/ICONE - FORNINHO.png" type="image/x-icon">
+    
+    <!-- CSS_-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Ícones -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['"Bebas Neue"', 'sans-serif'],
+                        body: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        dr: {
+                            bg: '#16110f', // Fundo escuro quente
+                            text: '#f4ebd8', // Creme/Off-white
+                            orange: '#e65c00', // Laranja botão principal
+                            orangeHover: '#cc5200',
+                            red: '#972718', // Vermelho seção final
+                            gray: '#2a2220', // Elementos de fundo secundários
+                            border: '#3d312e'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body class="bg-dr-bg text-dr-text font-body antialiased selection:bg-dr-orange selection:text-white overflow-x-hidden">
+
+    <!-- Textura sobreposta -->
+    <div class="texture-overlay"></div>
+
+    <!-- Tela de Abertura Cinematográfica -->
+    <div id="loader" class="fixed inset-0 bg-[#f4ebd8] z-50 flex items-center justify-center transition-opacity duration-1000 ease-in-out">
+        <img id="loader-logo" src="img/LOGO 01.png" alt="Logo Don Ritter" class="w-48 md:w-64 lg:w-80 opacity-0 transition-opacity duration-1000 ease-in-out drop-shadow-md">
+    </div>
+
+    <!-- Navegação Mobile/Desktop Simplificada -->
+    <header class="fixed top-0 w-full z-40 py-3 px-8 md:px-12 flex justify-between items-center bg-dr-bg/80 backdrop-blur-md border-b border-dr-border/50 transition-transform duration-300 transform translate-y-0" id="navbar">
+        <a href="#" class="flex-shrink-0" aria-label="Ir para o topo">
+            <img src="img/LOGO LATERAL - BRANCA .png" alt="Don Ritter" class="h-8 md:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+        </a>
+        
+        <!-- Menu Desktop -->
+        <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-medium text-dr-text/80">
+            <a href="#destaques" class="hover:text-dr-orange transition-colors">Cardápio</a>
+            <a href="#sobre" class="hover:text-dr-orange transition-colors">A Pizzaria</a>
+            <a href="#" class="btn-pedir text-dr-orange hover:text-dr-text transition-colors">Fazer Pedido</a>
+        </nav>
+
+        <!-- Menu Mobile Button -->
+        <button id="menu-btn" class="md:hidden text-dr-text focus:outline-none" aria-label="Abrir menu">
+            <i class="ph ph-list text-3xl"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-dr-bg z-40 flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-dr-text focus:outline-none" aria-label="Fechar menu">
+            <i class="ph ph-x text-3xl"></i>
+        </button>
+        <a href="#destaques" class="mobile-link font-heading text-4xl hover:text-dr-orange transition-colors">Cardápio</a>
+        <a href="#sobre" class="mobile-link font-heading text-4xl hover:text-dr-orange transition-colors">A Pizzaria</a>
+        <a href="#" class="btn-pedir mobile-link font-heading text-4xl text-dr-orange">Fazer Pedido</a>
+    </div>
+
+    <main>
+        <!-- Seção 1: HERO -->
+        <section id="hero" class="relative h-[100svh] w-full flex flex-col items-center justify-between text-center overflow-hidden pb-8 pt-24 md:pt-32">
+            <!-- Placeholder para o Vídeo (Substituir 'src' pelo vídeo real) -->
+            <!-- fallback em imagem via poster -->
+            <video autoplay loop muted playsinline src="img/Video_cinematografico.mp4" poster="https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover scale-105">
+                <!-- <source src="caminho/para/seu/video.mp4" type="video/mp4"> -->
+            </video>
+            
+            <!-- Overlay Escuro + Gradiente -->
+            <div class="absolute inset-0 bg-black/60 bg-gradient-to-t from-dr-bg via-transparent to-transparent"></div>
+            
+            <!-- Spacer top para equilibrar flex-col -->
+            <div class="relative z-10 w-full hidden md:block"></div>
+            
+            <!-- Conteúdo Hero -->
+            <div class="relative z-10 flex flex-col items-center px-6 md:px-12 w-full max-w-4xl mt-auto md:mt-0">
+                <span class="text-dr-orange text-xs md:text-sm font-semibold tracking-[0.3em] uppercase mb-4 reveal">Forno a lenha desde sempre</span>
+                
+                <h1 class="font-heading text-7xl md:text-[150px] leading-[0.8] mb-6 reveal delay-100 text-shadow-lg">
+                    DON<br>RITTER
+                </h1>
+                
+                <p class="text-sm md:text-base text-dr-text/80 uppercase tracking-widest mb-6 reveal delay-200">
+                    Pizzaria &bull; Cascavel
+                </p>
+                
+                <p class="max-w-md mx-auto text-sm md:text-base font-light text-dr-text/90 mb-10 reveal delay-200 leading-relaxed">
+                    Massa de fermentação lenta, molho da casa e brasa de verdade. A pizza sai do forno e vai direto para a sua mesa.
+                </p>
+                
+                <!-- Botões de Ação -->
+                <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md sm:max-w-none justify-center reveal delay-300">
+                    <a href="https://api.whatsapp.com/send/?phone=554599632098&text&type=phone_number&app_absent=0" class="btn-whatsapp flex items-center justify-center gap-2 bg-dr-orange text-white px-6 py-3 text-sm md:px-8 md:py-4 md:text-base rounded-full font-medium tracking-wide hover:bg-dr-orangeHover transition-all shadow-[0_0_20px_rgba(230,92,0,0.3)] w-full sm:w-auto">
+                        <i class="ph ph-whatsapp-logo text-xl"></i>
+                        PEDIR NO WHATSAPP
+                    </a>
+                    <a href="https://donritterdelivery.saipos.com/home" class="btn-pedir flex items-center justify-center gap-2 bg-transparent border border-dr-text/30 text-dr-text px-6 py-3 text-sm md:px-8 md:py-4 md:text-base rounded-full font-medium tracking-wide hover:bg-dr-text/10 transition-colors w-full sm:w-auto backdrop-blur-sm">
+                        <i class="ph ph-tote text-xl"></i>
+                        PEDIR ONLINE
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <a href="#destaques" class="relative z-10 mt-auto pt-10 flex flex-col items-center gap-2 text-dr-text/50 hover:text-dr-text transition-colors reveal delay-300" aria-label="Rolar para baixo">
+                <span class="text-[10px] uppercase tracking-widest">Cardápio</span>
+                <i class="ph ph-caret-down animate-bounce"></i>
+            </a>
+        </section>
+
+        <!-- Seção 2: CARDÁPIO INTERATIVO (Passando pela Brasa) -->
+        <section id="destaques" class="py-24 relative z-20 bg-dr-bg border-t border-dr-border">
+            <div class="text-center mb-12 px-6 md:px-12 reveal">
+                <span class="text-dr-orange text-xs font-semibold tracking-widest-extra uppercase mb-2 block">Cardápio</span>
+                <h2 class="font-heading text-5xl md:text-7xl">PASSANDO PELA BRASA</h2>
+                <p class="text-sm text-dr-text/60 mt-4 max-w-md mx-auto">Toque para pausar a esteira e ver detalhes.</p>
+            </div>
+
+            <!-- Carrossel Mobile / Grid Desktop -->
+            <div class="w-full pl-6 md:px-12 reveal delay-100">
+                <div id="pizza-carousel" class="flex overflow-x-auto hide-scrollbar gap-4 md:gap-6 pb-8 cursor-grab active:cursor-grabbing select-none">
+                    
+                    <!-- Card Pizza 1 -->
+                    <div class="shrink-0 w-[280px] md:w-[320px] bg-dr-gray rounded-2xl overflow-hidden border border-dr-border group relative">
+                        <!-- Imagem Placeholder Unsplash -->
+                        <div class="aspect-square overflow-hidden bg-black/50">
+                            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop" alt="Pizza Margherita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+                        </div>
+                        <div class="p-6 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-12">
+                            <div class="flex justify-between items-end">
+                                <h3 class="font-heading text-3xl tracking-wide">MARGHERITA</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Pizza 2 -->
+                    <div class="shrink-0 w-[280px] md:w-[320px] bg-dr-gray rounded-2xl overflow-hidden border border-dr-border group relative">
+                        <div class="aspect-square overflow-hidden bg-black/50">
+                            <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800&auto=format&fit=crop" alt="Pizza Calabresa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+                        </div>
+                        <div class="p-6 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-12">
+                            <div class="flex justify-between items-end">
+                                <h3 class="font-heading text-3xl tracking-wide">CALABRESA</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Pizza 3 -->
+                    <div class="shrink-0 w-[280px] md:w-[320px] bg-dr-gray rounded-2xl overflow-hidden border border-dr-border group relative">
+                        <div class="aspect-square overflow-hidden bg-black/50">
+                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800&auto=format&fit=crop" alt="Pizza Quatro Queijos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+                        </div>
+                        <div class="p-6 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-12">
+                            <div class="flex justify-between items-end">
+                                <h3 class="font-heading text-3xl tracking-wide">QUATRO QUEIJOS</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Card Pizza 4 -->
+                     <div class="shrink-0 w-[280px] md:w-[320px] bg-dr-gray rounded-2xl overflow-hidden border border-dr-border group relative">
+                        <div class="aspect-square overflow-hidden bg-black/50">
+                            <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=800&auto=format&fit=crop" alt="Pizza Portuguesa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy">
+                        </div>
+                        <div class="p-6 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-12">
+                            <div class="flex justify-between items-end">
+                                <h3 class="font-heading text-3xl tracking-wide">PORTUGUESA</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center reveal delay-200 px-6 md:px-12">
+                    <i class="ph ph-file-pdf"></i>
+                    VER CARDÁPIO COMPLETO
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção 3: AS MAIS PEDIDAS (Formato Lista) -->
+        <section class="py-24 bg-[#1a1412] px-6 md:px-12 relative z-10 border-t border-dr-border/30">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-16 reveal">
+                    <span class="text-dr-orange text-xs font-semibold tracking-widest-extra uppercase mb-2 block">Da Casa</span>
+                    <h2 class="font-heading text-5xl md:text-6xl">AS MAIS PEDIDAS</h2>
+                </div>
+
+                <div class="flex flex-col gap-8">
+                    <!-- Item Lista 1 -->
+                    <div class="flex items-start gap-4 md:gap-8 pb-8 border-b border-dr-border/50 reveal group">
+                        <div class="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full overflow-hidden shadow-lg border border-dr-border/50">
+                            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=200&auto=format&fit=crop" alt="Margherita" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row">
+                                <h3 class="font-heading text-2xl md:text-3xl tracking-wide">MARGHERITA</h3>
+                            </div>
+                            <p class="text-sm md:text-base text-dr-text/70 leading-relaxed">Molho de tomate italiano, muçarela de búfala e manjericão fresco.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item Lista 2 -->
+                    <div class="flex items-start gap-4 md:gap-8 pb-8 border-b border-dr-border/50 reveal delay-100 group">
+                        <div class="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full overflow-hidden shadow-lg border border-dr-border/50">
+                            <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=200&auto=format&fit=crop" alt="Calabresa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row">
+                                <h3 class="font-heading text-2xl md:text-3xl tracking-wide">CALABRESA</h3>
+                            </div>
+                            <p class="text-sm md:text-base text-dr-text/70 leading-relaxed">Calabresa artesanal fatiada, cebola roxa e orégano.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item Lista 3 -->
+                    <div class="flex items-start gap-4 md:gap-8 reveal delay-200 group">
+                        <div class="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full overflow-hidden shadow-lg border border-dr-border/50">
+                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=200&auto=format&fit=crop" alt="Quatro Queijos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1 md:mb-2 flex-col md:flex-row">
+                                <h3 class="font-heading text-2xl md:text-3xl tracking-wide">QUATRO QUEIJOS</h3>
+                            </div>
+                            <p class="text-sm md:text-base text-dr-text/70 leading-relaxed">Muçarela, gorgonzola, parmesão, catupiry e fio de mel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5: SOBRE (A Pizzaria) -->
+        <section id="sobre" class="py-24 bg-dr-bg px-6 md:px-12 flex justify-center text-center border-t border-dr-border/30">
+            <div class="max-w-4xl mx-auto w-full reveal">
+                <span class="text-dr-orange text-xs font-semibold tracking-widest-extra uppercase mb-4 block">A Pizzaria</span>
+                <h2 class="font-heading text-5xl md:text-7xl leading-tight mb-6">BRASA, MASSA E PACIÊNCIA</h2>
+                <p class="text-dr-text/80 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">
+                    A Don Ritter nasceu de uma receita de família e de um forno a lenha que nunca esfria. A massa descansa por horas, o molho é feito todo dia e cada pizza sai da brasa no ponto exato.
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-10 md:gap-16 justify-center items-center md:items-start mt-12">
+                    <!-- Endereço -->
+                    <div class="flex flex-col items-center gap-3 text-dr-text/90 w-full md:w-auto">
+                        <i class="ph ph-map-pin text-dr-orange text-3xl"></i>
+                        <div>
+                            <p class="font-medium text-lg" id="info-address-street">Rua São Paulo, 1679 - Centro</p>
+                            <p class="text-sm text-dr-text/60 mt-1" id="info-address-city">Cascavel/ PR · 85801-021</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Divisor visual em telas grandes -->
+                    <div class="hidden md:block w-px h-24 bg-dr-border/50"></div>
+                    
+                    <!-- Horários -->
+                    <div class="flex flex-col items-center gap-3 text-dr-text/90 w-full max-w-[300px]">
+                        <i class="ph ph-clock text-dr-orange text-3xl"></i>
+                        <div class="w-full text-left">
+                            <div class="flex justify-between border-b border-dr-border/30 pb-2 mb-2 text-sm">
+                                <span>Delivery</span>
+                                <span class="text-dr-text/60">18h - 23h</span>
+                            </div>
+                            <div class="flex justify-between border-b border-dr-border/30 pb-2 mb-2 text-sm">
+                                <span>Rodízio</span>
+                                <span class="text-dr-text/60">18h - 22h45</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram -->
+                <div class="mt-16 flex justify-center">
+                    <a href="#" id="link-instagram-text" target="_blank" class="flex items-center gap-3 hover:text-dr-orange transition-colors group">
+                        <i class="ph ph-instagram-logo text-3xl group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading text-2xl md:text-3xl tracking-widest mt-1">@DONRITTERPIZZARIA</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 6: CTA FINAL -->
+        <section class="py-24 bg-dr-red text-center px-6 md:px-12 relative overflow-hidden">
+            <!-- Textura escurecida apenas para o CTA -->
+            <div class="absolute inset-0 bg-black/20 mix-blend-multiply pointer-events-none"></div>
+            
+            <div class="relative z-10 max-w-3xl mx-auto reveal">
+                <h2 class="font-heading text-6xl md:text-9xl text-dr-text mb-4 leading-[0.85]">
+                    A BRASA<br>ESTÁ PRONTA
+                </h2>
+                <p class="text-dr-text/90 text-sm md:text-xl mb-10 px-4">
+                    Peça agora e receba sua pizza recém-saída do forno.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://api.whatsapp.com/send/?phone=554599632098&text&type=phone_number&app_absent=0" class="btn-whatsapp flex items-center justify-center gap-2 bg-dr-orange text-white px-6 py-4 text-sm md:px-10 md:py-5 md:text-lg rounded-full font-medium tracking-wide hover:bg-dr-orangeHover transition-all shadow-lg w-full sm:w-auto">
+                        <i class="ph ph-whatsapp-logo text-xl md:text-2xl"></i>
+                        PEDIR NO WHATSAPP
+                    </a>
+                    <a href="https://donritterdelivery.saipos.com/home" class="btn-pedir flex items-center justify-center gap-2 bg-[#6b1c11] text-dr-text px-6 py-4 text-sm md:px-10 md:py-5 md:text-lg rounded-full font-medium tracking-wide hover:bg-[#54160d] transition-colors w-full sm:w-auto">
+                        <i class="ph ph-tote text-xl md:text-2xl"></i>
+                        PEDIR ONLINE
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dr-bg py-12 border-t border-dr-border text-center px-6 md:px-12">
+        <div class="mb-8 flex flex-col items-center">
+            <img src="img/LOGO 01 - BRANCA .png" alt="Don Ritter" class="h-12 md:h-16 w-auto object-contain opacity-80 mb-2">
+            <p class="text-xs text-dr-text/40 tracking-[0.2em] uppercase mt-2">Pizzaria &bull; CASCAVEL / PR</p>
+        </div>
+        
+        <div class="flex justify-center gap-6 mb-8 text-dr-text/60">
+            <a href="#" id="link-instagram-footer" target="_blank" class="hover:text-dr-orange transition-colors" aria-label="Instagram">
+                <i class="ph ph-instagram-logo text-2xl"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=554599632098&text&type=phone_number&app_absent=0" class="btn-whatsapp hover:text-dr-orange transition-colors" aria-label="WhatsApp">
+                <i class="ph ph-whatsapp-logo text-2xl"></i>
+            </a>
+        </div>
+        
+        <p class="text-xs text-dr-text/30">
+            &copy; <span id="current-year"></span> Don Ritter Pizzaria. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="#" class="btn-whatsapp fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 hover:bg-[#1EBE5D] transition-transform duration-300 flex items-center justify-center group" aria-label="Fazer pedido pelo WhatsApp">
+        <i class="ph ph-whatsapp-logo text-2xl md:text-3xl"></i>
+        <!-- Tooltip -->
+        <span class="absolute right-full mr-4 bg-dr-bg border border-dr-border px-3 py-1.5 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            Faça seu pedido
+        </span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>
