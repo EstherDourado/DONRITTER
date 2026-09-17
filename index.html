@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Don Ritter Pizzaria</title>
-    
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">   
     <!-- SEO Meta Tags -->
     <meta name="description" content="A experiência Don Ritter. Massa de fermentação lenta, molho da casa e brasa de verdade. Peça sua pizza artesanal em Cascavel.">
-    <meta name="keywords" content="pizzaria, pizza artesanal, forno a lenha, Cascavel, delivery de pizza, Don Ritter">
+    <meta name="keywords" content="pizzaria, pizza artesanal, rodizio, Cascavel, delivery de pizza, Don Ritter">
     <meta name="theme-color" content="#1a1311">
-    
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Don Ritter Pizzaria">
     <!-- Open Graph / Redes Sociais -->
+    <meta property="og:locale" content="pt_BR">
     <meta property="og:title" content="Don Ritter Pizzaria">
     <meta property="og:description" content="Massa de fermentação lenta, molho da casa e brasa de verdade. A pizza sai do forno e vai direto para a sua mesa.">
     <meta property="og:type" content="restaurant">
-    <meta property="og:url" content="https://donritterpizzaria.com.br">
+    <meta property="og:url" content="https://donritter.com.br">
     
     <!-- Fontes (Bebas Neue para Títulos parecidos com a referência, Inter para corpo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +59,44 @@
                 }
             }
         }
+    </script>
+
+    <!-- SCHEMA.ORG (Dados Estruturados Locais)  Isso ajuda a criar aquele "painel lateral" rico em informações no Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Don Ritter Pizzaria",
+      "image": "https://www.donritter.com.br/img/LOGO 01.png",
+      "url": "https://www.donritter.com.br",
+      "telephone": "+554599632098",
+      "servesCuisine": "Pizza",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua São Paulo, 1679 - Centro",
+        "addressLocality": "Cascavel",
+        "addressRegion": "PR",
+        "addressCountry": "BR"
+      },
+      "author": {
+			"@type": "Person",
+			"name": "Don Ritter",
+			"url": "https://donritter.com.br",
+			"image": "https://www.donritter.com.br/img/LOGO 01.png",
+			"sameAs": [
+				"https://www.instagram.com/donritterpizzaria",
+			]
+		},
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"],
+          "opens": "18:00",
+          "closes": "23:00"
+        }
+      ]
+    }
     </script>
 
 </head>
